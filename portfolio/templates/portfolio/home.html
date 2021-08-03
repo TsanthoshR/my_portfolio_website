@@ -1,0 +1,16 @@
+<h1> This is "my" portfolio homepage </h1>
+
+<!-- {{ projects }} -->
+
+{% for project in projects %}
+  {{ project.title }} <br>
+  {{ project.description }} <br>
+  <!-- {{ project.image }} -->
+  <!-- {{ project.image.url }} -->
+  <img src="{{ project.image.url }}" alt="" height="400" > <br>
+    {% if project.url %}
+    <a href="{{project.url}}">Link</a>
+    {% endif %}
+
+
+{% endfor %}
