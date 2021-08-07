@@ -4,8 +4,8 @@ Hello Blog <br>
 {% for Blog in Blogs %}
 
 <a href="{% url 'blog:details' Blog.id %}"><h2>  {{ Blog.title }} </h2> </a>
-<h5>  {{ Blog.date }}</h5>
-<p>  {{ Blog.description }} </p>
+<h5>  {{ Blog.date|date:'M d Y'|upper }}</h5>
+<p>  {{ Blog.description|striptags|truncatechars:50 }} </p>
  <br> <br>
 
 
