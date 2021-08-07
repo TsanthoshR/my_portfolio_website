@@ -1,8 +1,9 @@
 Hello Blog <br>
 
-
+<h2>Santhosh has writted {{ Blogs.count }} Blog post{{ Blogs.count|pluralize }}</h2>
 {% for Blog in Blogs %}
-<h2>  {{ Blog.title }} </h2>
+
+<a href="{% url 'blog:details' Blog.id %}"><h2>  {{ Blog.title }} </h2> </a>
 <h5>  {{ Blog.date }}</h5>
 <p>  {{ Blog.description }} </p>
  <br> <br>
