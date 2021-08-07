@@ -1,6 +1,10 @@
 <h1> This is "my" portfolio homepage </h1>
 
 <!-- {{ projects }} -->
+{% load static %}
+
+<a href="{% static 'portfolio\career-handbook.pdf' %}">pdf_file</a>
+<img src="{% static 'portfolio\36890.jpg' %}" alt="">
 
 {% for project in projects %}
   {{ project.title }} <br>
