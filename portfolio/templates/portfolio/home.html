@@ -1,21 +1,25 @@
-<h1> This is "my" portfolio homepage </h1>
+{% extends 'portfolio/base.html' %}
+{% block content %}
+    <h1> This is "my" portfolio homepage </h1>
 
-<a href="{% url 'blog:all_blogs' %}"> Blogs</a> <br>
-<!-- {{ projects }} -->
-{% load static %}
+    <a href="{% url 'blog:all_blogs' %}"> Blogs</a> <br>
+    <!-- {{ projects }} -->
+    {% load static %}
 
-<a href="{% static 'portfolio\career-handbook.pdf' %}">pdf_file</a>
-<img src="{% static 'portfolio\36890.jpg' %}" alt="">
+    <a href="{% static 'portfolio\career-handbook.pdf' %}">pdf_file</a>
+    <img src="{% static 'portfolio\36890.jpg' %}" alt="">
 
-{% for project in projects %}
-  {{ project.title }} <br>
-  {{ project.description }} <br>
-  <!-- {{ project.image }} -->
-  <!-- {{ project.image.url }} -->
-  <img src="{{ project.image.url }}" alt="" height="400" > <br>
-    {% if project.url %}
-    <a href="{{project.url}}">Link</a>
-    {% endif %}
+    {% for project in projects %}
+      {{ project.title }} <br>
+      {{ project.description }} <br>
+      <!-- {{ project.image }} -->
+      <!-- {{ project.image.url }} -->
+      <img src="{{ project.image.url }}" alt="" height="400" > <br>
+        {% if project.url %}
+        <a href="{{project.url}}">Link</a>
+        {% endif %}
 
 
-{% endfor %}
+    {% endfor %}
+
+{% endblock %}
